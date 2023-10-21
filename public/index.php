@@ -23,4 +23,6 @@ $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');
 
+$router->set404('\App\Controllers\Controller@sendNotFound');
+
 $router->run();
