@@ -29,6 +29,7 @@ class LoginController extends Controller
 
         $errors = [];
         $user = User::where('email', $user_credentials['email'])->first();
+        
         if (!$user) {
             // Người dùng không tồn tại...
             $errors['email'] = 'Invalid email or password.';

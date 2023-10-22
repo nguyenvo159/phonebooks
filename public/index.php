@@ -20,9 +20,12 @@ $router->get('/login', '\App\Controllers\Auth\LoginController@create');
 $router->post('/login', '\App\Controllers\Auth\LoginController@store');
 
 // Contact routes
-$router->get('/', '\App\Controllers\HomeController@index');
-$router->get('/home', '\App\Controllers\HomeController@index');
+$router->get('/', '\App\Controllers\ContactsController@index');
+$router->get('/home', '\App\Controllers\ContactsController@index');
 
 $router->set404('\App\Controllers\Controller@sendNotFound');
+
+$router->get('/contacts/create', '\App\Controllers\ContactsController@create');
+$router->post('/contacts', '\App\Controllers\ContactsController@store');
 
 $router->run();
